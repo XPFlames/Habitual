@@ -13,7 +13,7 @@
       <h1 class="text-xl font-bold">Habit Tracker</h1>
       <div>
         <a href="#create-habit" class="mr-4">Create Habit</a>
-        <a href="#goals">Goals</a>
+        <a href="#leaderboard">Leaderboard</a>
       </div>
     </div>
   </nav>
@@ -21,18 +21,15 @@
   <!-- Dashboard -->
   <section class="container mx-auto mt-8 p-4">
     <h2 class="text-2xl font-bold mb-4">Dashboard</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="bg-white p-4 shadow-md rounded-lg">
-        <h3 class="text-xl font-bold">Daily Progress</h3>
-        <canvas id="dailyChart" class="mt-4"></canvas>
-      </div>
-      <div class="bg-white p-4 shadow-md rounded-lg">
-        <h3 class="text-xl font-bold">Weekly Progress</h3>
-        <canvas id="weeklyChart" class="mt-4"></canvas>
-      </div>
-      <div class="bg-white p-4 shadow-md rounded-lg">
-        <h3 class="text-xl font-bold">Monthly Progress</h3>
-        <canvas id="monthlyChart" class="mt-4"></canvas>
+    <div id="habit-list" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Habits will be dynamically added here -->
+    </div>
+
+    <!-- Badges Section -->
+    <div class="mt-12">
+      <h2 class="text-2xl font-bold mb-4">Your Badges</h2>
+      <div id="badge-section" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <!-- Badges will be dynamically added here -->
       </div>
     </div>
   </section>
@@ -56,4 +53,33 @@
       </div>
       <div>
         <label for="habit-goal" class="block text-sm font-medium">Daily Goal (in minutes)</label>
-        <input type="number" id="habit-goal" class="w-full
+        <input type="number" id="habit-goal" class="w-full p-2 border rounded-md" placeholder="e.g., 60">
+      </div>
+      <div>
+        <label for="habit-streak-goal" class="block text-sm font-medium">Streak Goal (days)</label>
+        <input type="number" id="habit-streak-goal" class="w-full p-2 border rounded-md" placeholder="e.g., 10">
+      </div>
+      <div class="col-span-2">
+        <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded-md mt-4">Create Habit</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Leaderboard -->
+  <section id="leaderboard" class="container mx-auto mt-12 p-4 bg-white shadow-md rounded-lg">
+    <h2 class="text-2xl font-bold mb-4">Leaderboard</h2>
+    <ul id="leaderboard-list" class="list-disc ml-6">
+      <!-- Leaderboard items will be dynamically added here -->
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white p-4 mt-12 text-center">
+    <p>© 2024 Student Habit Tracker</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+
